@@ -37,7 +37,7 @@ namespace AppEntriPemasukanPengeluaran
             lvwHistoriPemasukanPengeluaran.Columns.Add("Kredit", 100, HorizontalAlignment.Right);
         }
 
-        private void FrmEntryOnCreate(Nasabah nasabah)
+        private void OnCreateEventHandler(Nasabah nasabah)
         {
             listOfNasabah.Add(nasabah);
             setting = new GeneralSettings();
@@ -77,7 +77,7 @@ namespace AppEntriPemasukanPengeluaran
             string nasabah = txtNasabah.Text;
 
             FrmEntriPemasukanPengeluaran frmEntry = new FrmEntriPemasukanPengeluaran(header, noRekening, nasabah);
-            frmEntry.onCreate += FrmEntryOnCreate;
+            frmEntry.onCreate += OnCreateEventHandler;
             frmEntry.ShowDialog();
         }
 
